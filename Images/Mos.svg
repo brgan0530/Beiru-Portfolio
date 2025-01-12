@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 841.89 595.28">
+  <!-- Generator: Adobe Illustrator 29.1.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 142)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill:rgb(0, 0, 0);
+      }
+
+      .st1 {
+        stroke-width: 20px;
+      }
+
+      .st1, .st2 {
+        fill: none;
+        stroke:rgb(0, 0, 0);
+        stroke-miterlimit: 10;
+      }
+
+      .st2 {
+        stroke-width: 30px;
+      }
+    </style>
+  </defs>
+  <path class="st2" d="M501.03-78.84"/>
+  <polyline class="st1" points="268.79 305.37 379.97 305.37 379.97 175.11 379.97 433.66"/>
+  <path class="st1" d="M384.58,211.95"/>
+  <path class="st1" d="M513.53,448.13"/>
+  <path class="st1" d="M513.53,297.64"/>
+  <path class="st1" d="M434.58,297.64"/>
+  <path class="st1" d="M431.29,107.34"/>
+  <line class="st1" x1="434.58" y1="433.66" x2="434.58" y2="175.11"/>
+  <line class="st1" x1="508.26" y1="423.41" x2="426.35" y2="423.08"/>
+  <polygon class="st0" points="481.94 397.64 481.94 449.18 534.58 422.27 481.94 397.64"/>
+  <polyline class="st1" points="534.58 98.79 534.58 185.19 431.29 184.86"/>
+  <line class="st1" x1="531.59" y1="420.87" x2="531.59" y2="509.97"/>
+</svg>

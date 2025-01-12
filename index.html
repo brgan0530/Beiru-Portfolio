@@ -1,0 +1,655 @@
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <!-- this meta tag ensures that inspect tool is functioning!!!! -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0 maximum-scale=5.0"> 
+    
+    <!--google fonts-->
+    <link 
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" 
+    rel="stylesheet"
+    />
+
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" 
+    rel="stylesheet"
+    />
+ 
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Inconsolata:wght@200..900&display=swap" 
+    rel="stylesheet"
+    />
+
+    <link href="https://fonts.googleapis.com/css2?family=Offside&display=swap" 
+    rel="stylesheet"
+    />
+
+    <!--vanilla tilt-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+    
+    <!--icon lib-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href = "./css/style.css">
+    
+    <title>My Portfolio</title>
+</head>
+<body class="overflow-x-hidden w-full min-w-full selection:bg-teal-300/40 selection:text-teal-900">
+    <!-- Grid Background -->
+    <div
+        class="fixed h-full w-full bg-white dark:bg-blue-950 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] -z-20"
+    ></div>
+
+    <!-- nav bar -->
+    <header class ="bg-white/40 dark:bg-black/60 backdrop-blur-md shadow-md px-5 rounded-b-lg w-full fixed top-0 z-20">
+        <div class = "relative max-w-6xl mx-auto py-4 flex flex-col md:flex-row md:items-center justify-between">
+            <a class="font-montserrat text-xl flex items-center font-bold dark:text-slate-400 text-black" href="/">
+                <img src="./Images/Logo.svg" alt="logo" width="40" height="40" class="ml-5 mr-3 mt-[-5px]">
+                <span class="font-bold">BEI</span>
+                <span class="font-bold mr-1">RU</span>
+                <span class="font-normal">GAN</span>
+            </a>
+
+            <!-- hamburger animation -->
+            <!-- remove hidden to see checkbox -->
+            <input class="peer hidden" type="checkbox" id="navbar-open">
+
+            <label class="md:hidden group cursor-pointer absolute right-0 mt-4 mr-5" id="navbar-open" for="navbar-open">
+                <div class="grid justify-items-center space-y-0.5">
+                  <p class="h-1 w-6 rounded-sm bg-black dark:bg-slate-400 duration-300 ease-in" id="line1"></p>
+                  <p></p><!-- important somehow -->
+                  <p class="h-1 w-6 rounded-sm bg-black dark:bg-slate-400 duration-300 ease-in" id="line2"></p>
+                  <p></p>
+                  <p class="h-1 w-6 rounded-sm bg-black dark:bg-slate-400 duration-300 ease-in" id="line3"></p>
+                  <p></p>
+                </div>
+            </label>
+            
+            <nav class="peer-checked:block hidden mt-5 md:block">
+                <ul class="relative flex flex-col md:flex-row md:space-x-10 font-sans font-semibold text-lg gap-y-3 ml-5">
+                    <li class=""><a href="#" class="relative text-black dark:text-slate-400 dark:hover:text-white hover:text-gray-400 cursor-pointer transition-all ease-in-out before:transition-[width] before:ease-in-out before:duration-700 before:absolute before:bg-teal-400 before:origin-center before:h-[2px] before:w-0 hover:before:w-[30%] before:bottom-[-8px] before:left-[50%] after:transition-[width] after:ease-in-out after:duration-700 after:absolute after:bg-teal-400 after:origin-center after:h-[2px] after:w-0 hover:after:w-[30%] after:bottom-[-8px] after:right-[50%]">Home</a></li>
+                    <li class=""><a href="#about" class="relative text-black dark:text-slate-400 dark:hover:text-white hover:text-gray-400 cursor-pointer transition-all ease-in-out before:transition-[width] before:ease-in-out before:duration-700 before:absolute before:bg-teal-400 before:origin-center before:h-[2px] before:w-0 hover:before:w-[30%] before:bottom-[-8px] before:left-[50%] after:transition-[width] after:ease-in-out after:duration-700 after:absolute after:bg-teal-400 after:origin-center after:h-[2px] after:w-0 hover:after:w-[30%] after:bottom-[-8px] after:right-[50%]">About</a></li>
+                    <li class=""><a href="#projects" class="relative text-black dark:text-slate-400 dark:hover:text-white hover:text-gray-400 cursor-pointer transition-all ease-in-out before:transition-[width] before:ease-in-out before:duration-700 before:absolute before:bg-teal-400 before:origin-center before:h-[2px] before:w-0 hover:before:w-[30%] before:bottom-[-8px] before:left-[50%] after:transition-[width] after:ease-in-out after:duration-700 after:absolute after:bg-teal-400 after:origin-center after:h-[2px] after:w-0 hover:after:w-[30%] after:bottom-[-8px] after:right-[50%]">Projects</a></li>
+                    <li class=""><button onclick="toggleModal()" class="relative dark:text-slate-400 dark:hover:text-white text-black hover:text-gray-400 cursor-pointer transition-all ease-in-out before:transition-[width] before:ease-in-out before:duration-700 before:absolute before:bg-teal-400 before:origin-center before:h-[2px] before:w-0 hover:before:w-[30%] before:bottom-[-8px] before:left-[50%] after:transition-[width] after:ease-in-out after:duration-700 after:absolute after:bg-teal-400 after:origin-center after:h-[2px] after:w-0 hover:after:w-[30%] after:bottom-[-8px] after:right-[50%]">Contact Me</button></li>
+                </ul>
+
+                <div class="flex md:hidden absolute bottom-5 right-5">
+
+                    <button onclick="toggleDarkMode()" 
+                        class="w-12 h-12 rounded-full hover:bg-gray-100/60 dark:hover:bg-gray-700/60">
+                        <i class="fa fa-moon-o text-2xl block dark:hidden text-blue-800" aria-hidden="true"></i>
+                        <i class="fa fa-sun-o text-2xl hidden dark:block text-yellow-400" aria-hidden="true"></i>
+                    </button>
+        
+                </div>
+
+            </nav>
+
+            <div class="hidden md:flex">
+
+                <button onclick="toggleDarkMode()" 
+                    class="w-12 h-12 rounded-full hover:bg-gray-100/60 dark:hover:bg-gray-700/60">
+                    <i class="fa fa-moon-o text-2xl block dark:hidden text-blue-800" aria-hidden="true"></i>
+                    <i class="fa fa-sun-o text-2xl hidden dark:block text-yellow-400" aria-hidden="true"></i>
+                </button>
+    
+            </div>
+        
+        </div>
+    </header>
+
+    <!-- Namecard modal -->
+    <div class="fixed z-30 inset-0 hidden min-h-screen overflow-y-auto" id="modal">
+        <!-- Overlay -->
+        <div class="fixed inset-0 bg-gray-800/75 dark:bg-gray-700/75 backdrop-blur-sm"></div>
+        
+        <div class="min-h-screen overflow-y-auto" data-tilt data-tilt-scale="1.1">
+            <!-- Modal Container -->
+            <div class="min-h-screen flex flex-col space-y-6 items-center justify-center p-4 relative">
+                <button type="button" 
+                        class="p-3 bg-gray-500 text-white rounded-full hover:bg-red-700 mr-2 cursor-pointer" 
+                        onclick="toggleModal()">
+                    <i class="fa fa-times" aria-hidden="false"></i>
+                </button>
+                <!-- Modal Content -->
+                <div id="tiltCard" data-tilt class="relative w-[320px] md:w-[400px] h-[720px] rounded-3xl bg-white dark:bg-blue-950 shadow-neutral-600 overflow-hidden">
+                    <img src="./Images/Nature.jpg" alt="symbol" class="h-[200px] w-full object-cover">
+                    <div class="absolute left-1/2 transform -translate-x-1/2 top-[100px]">
+                        <div class="w-[150px] h-[150px] md:w-[200px] md:h-[200px] rounded-full overflow-hidden ring-white dark:ring-blue-950 ring-8">
+                            <img src="./Images/Portrait_3.png" alt="symbol" class="saturate-150 h-full w-full object-cover">
+                        </div>
+                    </div>
+                    <div class="flex flex-col justify-center items-center mt-[80px] md:mt-[130px] space-y-3 text-black dark:text-slate-300">
+                        <p class="font-montserrat text-2xl font-semibold">GAN <span class="font-montserrat font-semibold text-2xl underline underline-offset-2">BEI RU</span></p>
+                        <p class="font-semibold font-montserrat text-md text-center text-blue-900 dark:text-blue-500">Aspiring Electrical & Electronics Engineer</p>
+                        
+                        <div class="flex flex-row space-x-2 items-center justify-center">
+                            <a href="mailto:beirugan05@gmail.com" class="">
+                                <i class="fa fa-envelope text-teal-500 text-lg" aria-hidden="true"></i>
+                            </a>
+                            <p class="font-semibold font-montserrat text-md w-[200px]">beirugan05@gmail.com</p>
+                        </div>
+
+                        <div class="flex flex-row space-x-2 items-center justify-center">
+                            <a href="https://www.linkedin.com/in/gan-bei-ru-021661256" class="">
+                                <i class="fa fa-linkedin-square text-teal-500 text-xl" aria-hidden="true"></i>
+                            </a>
+                            <p class="font-semibold font-montserrat text-md text-center w-[200px]">www.linkedin.com/in/gan-bei-ru-021661256</p>
+                        </div>
+
+                        <div class="absolute bottom-5 right-5">
+                            <img src="./Images/Logo.svg" alt="logo" width="40" height="40" class="">
+                        </div>
+
+                    </div>
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--intro section-->
+    <section class="relative mb-10 md:mb-20">
+       <!-- icons content-->
+       <div class="absolute translate-y-[190px] lg:-translate-x-[250px] inset-0 hidden md:flex justify-center -translate-x-[170px]">
+            <img src="./Images/Mos.svg" alt="symbol" class= "lg:w-20 lg:h-20 bg-orange-200 dark:bg-orange-100/60 rounded-2xl rotate-0 shadow-inner w-14 h-14 ">
+       </div>
+
+       <!-- icons content-->
+       <div class="absolute lg:translate-x-[250px] translate-y-[150px] inset-0 hidden md:flex justify-center translate-x-[150px]">
+        <img src="./Images/Nand.svg" alt="symbol" class= "lg:w-20 lg:h-20 bg-yellow-200 dark:bg-yellow-100/60 rounded-2xl rotate-0 shadow-inner w-14 h-14 ">
+       </div>
+
+       <!-- icons content-->
+       <div class="absolute lg:translate-x-[400px] lg:translate-y-[400px] inset-0 hidden md:flex justify-center translate-x-[220px] translate-y-[300px]">
+        <img src="./Images/Buff.svg" alt="symbol" class= "lg:w-20 lg:h-20 bg-lime-200 dark:bg-lime-100/60 rounded-2xl rotate-45 shadow-inner w-14 h-14 ">
+       </div>
+
+       <!-- icons content-->
+       <div class="absolute lg:-translate-x-[400px] lg:translate-y-[400px] inset-0 hidden md:flex justify-center -translate-x-[200px] translate-y-[320px]">
+        <img src="./Images/Res.svg" alt="symbol" class= "lg:w-20 lg:h-20 bg-fuchsia-200 dark:bg-fuchsia-100/60 rounded-2xl -rotate-45 shadow-inner w-14 h-14 ">
+       </div>
+       
+        <div class="flex flex-col justify-center items-center space-y-10 md:space-y-14">
+            <!-- animated text-->
+            <div class="mt-[120px] md:mt-[200px] flex justify-center z-10">
+                <div class="text-center text-xl md:text-3xl lg:text-4xl">
+                    <p class ="text-blue-950 dark:text-blue-400 font-caveat hover:animate-bounce cursor-pointer">Hello there <span class="text-3xl inline-block hover:animate-[wave_3s_infinite]">👋</span></p>
+                    <p class ="mt-2.5 text-blue-950 dark:text-blue-400 font-caveat">My name is <span class = "text-yellow-600 dark:text-yellow-300 font-caveat inline-block px-1 py-0.5 rounded-md bg-yellow-400/30 dark:bg-yellow-300/30">Bei Ru</span></p>
+                    <p class=" mt-3.5 text-blue-950 dark:text-blue-400 font-caveat">and I am <span id="typewriter" class= " text-orange-600 dark:text-orange-400 font-caveat font-semibold italic underline underline-offset-8" ></span></p>
+                </div>
+            </div>
+
+                
+            <!-- container with marquee and matrix-->
+            <div class="relative flex justify-center items-center">
+
+                <!-- Infinite Marquee -->
+                <div class="absolute flex items-center justify-center marquee-container -z-1 md:visible invisible p-2">
+                    <div class="font-montserrat font-semibold marquee-content text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-teal-300/80 dark:text-teal-200/50">
+                    <span>I like to discover the aesthetic side of engineering.</span>
+                    </div>
+                </div>    
+
+                <!-- Interactive Matrix -->
+                <div id="dotGridContainer" class="relative dark:bg-slate-800 dark:shadow-lg dark:shadow-blue-800 items-center dot-grid-component">
+                        
+                    <div class="tooltip"><i class="fa fa-info-circle fa-icon cursor-pointer dark:text-white" aria-hidden="false"></i>
+                        <span class="tooltiptext font-montserrat text-xs md:text-sm">Click a circle to construct your masterpiece! </span>
+                    </div>
+
+                    <div class="top-section">
+                        <div class="color-palette">
+                            <div class="color-option selected" style="background-color: #e5e5e5" data-color="#e5e5e5"></div>
+                            <div class="color-option" style="background-color: #fe5151" data-color="#ff0000"></div>
+                            <div class="color-option" style="background-color: #fcfc68" data-color="#ffff00"></div>
+                            <div class="color-option" style="background-color: #ffc559" data-color="#ffa500"></div>
+                            <div class="color-option" style="background-color: #6ef2fe" data-color="#6ef2fe"></div>
+                        </div>
+                        <div class="buttons">
+                            <button class="btn dark:dark:bg-slate-800 dark:hover:bg-slate-900" id="resetBtn"><i class="fa fa-refresh fa-lg dark:text-white" aria-hidden="false"></i></button>
+                            <button class="btn dark:dark:bg-slate-800 dark:hover:bg-slate-900" id="smileyBtn"><i class="fa fa-smile-o fa-lg dark:text-white" aria-hidden="false"></i></button>
+                        </div>
+                    </div>
+                    <div class="grid-container">
+                        <div class="dot-grid"></div>
+                    </div>  
+                
+                </div>     
+            </div>
+
+            <!-- Infinite Marquee Replacement -->
+            <div class="md:hidden flex flex-col items-center">
+                <p class="font-inconsolas text-blue-950 dark:text-white text-sm font-semibold">I like to discover the</p>
+                <p class="font-inconsolas text-md font-extrabold">
+                    <span class="text-red-500">a</span>
+                    <span class="text-orange-500">e</span> 
+                    <span class="text-yellow-500">s</span> 
+                    <span class="text-green-500">t</span> 
+                    <span class="text-blue-500">h</span> 
+                    <span class="text-blue-500">e</span> 
+                    <span class="text-indigo-500">t</span>
+                    <span class="text-violet-500">i</span> 
+                    <span class="text-fuchsia-500">c</span>   
+                </p>
+                <p class="font-inconsolas text-blue-950 dark:text-white text-sm font-semibold">side of engineering :D</p>
+            </div>
+
+
+        </div>
+
+    </section>
+    
+
+    <!-- About Me -->
+    <section id="about" class="w-full outline-black py-20 border-teal-700 dark:border-teal-400 dark:bg-teal-300/10 border-t-2 bg-teal-200/10">
+        
+        
+        <div class="relative flex flex-col max-w-6xl sm:ml-10 sm:mr-10 lg:mx-auto mt-8">
+
+             
+            <div class="flex flex-row justify-between items-center">
+                <h1 class="mb-8 text-teal-700 dark:text-teal-400 font-offside sm:text-4xl lg:text-5xl font-extrabold">ABOUT ME</h1>
+
+                <a href="./Info/GanBeiRu_Resume.pdf" download>
+                    <button class="shadow-md cursor-pointer shadow-gray-400 dark:shadow-gray-900 font-offside font-semibold sm:text-lg lg:text-xl p-3 bg-yellow-300 text-yellow-700 dark:bg-yellow-900 dark:text-yellow-300 rounded-lg dark:hover:shadow-md dark:hover:text-lime-400 dark:hover:bg-lime-700 dark:hover:shadow-lime-300 hover:shadow-md hover:bg-lime-400 hover:text-lime-700 hover:shadow-lime-300 transition duration-500 ease-in-out hover:scale-105">DOWNLOAD RESUME <i class="fa fa-download" aria-hidden="true"></i></button>
+                </a>
+            </div>
+
+            <!-- Flex container to align image and text -->
+            <div class="flex flex-col lg:flex-row items-center lg:items-start justify-between mt-8 sm:space-y-10 lg:space-y-0 text-black dark:text-slate-300">
+                <!-- Hover image change animation -->
+                <div class="relative sm:h-[280px] sm:w-[290px] md:h-[300px] md:w-[310px] lg:h-[350px] lg:w-[360px]">
+                    <img src="./Images/Portrait_2.png" alt="portrait" class="cursor-pointer absolute inset-0 w-full h-full object-cover rounded-3xl shadow-inner">
+                    <img src="./Images/Portrait_3.png" alt="portrait_2" class="cursor-pointer absolute inset-0 w-full h-full object-cover rounded-3xl shadow-inner opacity-100 hover:opacity-0 transition-opacity duration-300 ease-in-out">
+                </div>  
+
+                <div class="bg-white dark:bg-cyan-950/60 dark:shadow-teal-950 sm:w-full sm:h-full lg:w-[750px] lg:h-[350px] p-10 rounded-3xl backdrop-blur-sm  sm:text-md md:text-lg lg:text-xl shadow-inner  text-left">
+                    <p class="font-offside font-semibold">
+                        I am an Electrical Engineering student from Singapore University of Technology and Design (SUTD),
+                        set to graduate in 2025. 
+                        
+                    </p>
+                    <p class="font-inconsolas mt-8">
+                        My major is in <span class="inline-block mt-0 rounded-lg font-medium dark:bg-lime-800/50 dark:text-lime-100 text-lime-800 bg-lime-100 px-1">Engineering Product Development (EPD)</span>, with a <span class="inline-block mt-0 rounded-lg font-medium dark:bg-lime-800/50 dark:text-lime-100 text-lime-800 bg-lime-100 px-1">specialisation track 
+                        in Electrical Engineering.</span>
+                    </p>
+
+                    <p class="font-inconsolas mt-2">
+                        I am currently <span class="inline-block mt-0 rounded-lg font-medium dark:bg-lime-800/50 dark:text-lime-100 text-lime-800 bg-lime-100 px-1">seeking full-time engineering roles</span> in the semiconductor industry, driven by my strong passion for semiconductors. 
+                        However, I am open to exploring positions in other areas of electrical and electronics engineering.
+                    </p>
+                </div>  
+            </div>
+
+            
+            <div class= "flex flex-col lg:flex-row justify-between sm:items-center lg:items-end mt-1 sm:space-y-10 lg:space-y-0 text-black dark:text-slate-300">
+
+                <div class= "flex flex-col">
+
+                    <h2 class="mb-8 text-teal-700 dark:text-teal-400 sm:text-2xl md:text-3xl font-offside font-extrabold mt-28">SIDE STORY</h2>
+
+                    <div class="bg-white dark:bg-cyan-950/60 dark:shadow-teal-950 sm:w-full sm:h-full lg:w-[850px] lg:h-[330px] p-10 rounded-3xl backdrop-blur-sm sm:text-md md:text-lg lg:text-xl shadow-inner text-justify">
+                        <p class="font-inconsolas first-line:tracking-widest
+                        sm:first-letter:text-5xl md:first-letter:text-6xl lg:first-letter:text-7xl first-letter:font-bold first-letter:text-black dark:first-letter:text-slate-300
+                        first-letter:mr-3 first-letter:float-left">
+                        I pursued Electrical Engineering because I am fascinated with how electrical components can be used for myriad purposes, 
+                        from light elements in artworks to hardware in mobile devices.
+                        </p>
+
+                        <p class="font-inconsolas mt-5">
+                            My fascination started when I incorporated light elements into my artwork in junior college. 
+                        </p>
+
+                      
+                        <p class="font-inconsolas inline-block mt-0 rounded-lg font-medium dark:bg-lime-800/50 dark:text-lime-100 text-lime-800 bg-lime-100 px-1">
+                            I liked how natural phenomena can be replicated with electrical components.
+                        </p> 
+                        
+
+                        <p class="font-inconsolas mt-5">
+                            That was the start of my maker journey.
+                        </p>
+                    </div>  
+                </div>
+
+                <div class="items-center h-[450px] w-[270px] hover:scale-105 ease-in-out duration-300">
+                    <img src="./Images/Artwork.png" alt="portrait" class="cursor-pointer h-full w-full object-cover rounded-3xl shadow-inner">
+                </div>  
+
+            </div>
+
+            <div class= "flex flex-col lg:flex-row justify-between sm:items-center lg:items-start mt-28 sm:space-y-10 lg:space-y-0">
+
+                <div class= "flex flex-col gap-y-5 text-black dark:text-slate-300">
+                    <h2 class="mb-8 text-teal-700 dark:text-teal-400 sm:text-2xl md:text-3xl font-offside font-extrabold">EDUCATION</h2>
+
+                    <div class= "flex flex-row items-start gap-x-10 sm:text-md md:text-lg lg:text-xl">
+                        <p class="items-center bg-teal-300 dark:bg-cyan-800 sm:w-[90px] md:w-[150px] p-4 font-bold font-inconsolas rounded-2xl">SEPT 2021 - PRESENT</p>
+
+                        <div class= "flex flex-col md:text-justify sm:w-[160px] md:w-[350px] font-inconsolas">
+                            <p>Bachelors of Engineering,</p>
+                            <p>Engineering Product Development</p>
+                            <p>SUTD</p> 
+                            <p>cGPA: 4.97 (Updated as of Jan 2025)</p>
+                        </div>
+                    </div>
+
+                    <div class= "flex flex-row items-start gap-x-10 sm:text-md md:text-lg lg:text-xl">
+                        <p class="bg-teal-300 dark:bg-cyan-800 sm:w-[90px] md:w-[150px] p-4 font-bold font-inconsolas rounded-2xl">JAN 2019 - DEC 2020</p>
+
+                        <div class= "flex flex-col sm:w-[160px] md:w-[350px] md:text-justify font-inconsolas">
+                            <p>GCE A-Level,</p>
+                            <p>Nanyang Junior College</p>
+                            <p>(H2 Physics, H2 Chemistry, H2 Math, H2 H3 Art)</p> 
+                        </div>
+                    </div>
+
+                    
+                </div>
+
+                <div class= "flex flex-col gap-y-5 text-black dark:text-slate-300">
+                    <h2 class=" mb-8 text-teal-700 dark:text-teal-400  sm:text-2xl md:text-3xl font-offside font-extrabold">WORKING EXPERIENCES</h2>
+
+                    <div class= "flex flex-row items-start gap-10 sm:text-md md:text-lg lg:text-xl">
+                        <p class="items-center bg-teal-300 dark:bg-cyan-800 sm:w-[90px] md:w-[150px] p-4 font-bold font-inconsolas rounded-2xl">MAY 2024 - SEPT 2024</p>
+
+                        <div class= "flex flex-col sm:w-[160px] md:w-[350px] lg:text-justify font-inconsolas">
+                            <p>Silicon Validation and Automation Intern,</p>
+                            <p>Infineon Technologies Singapore</p>
+                        </div>
+                    </div>
+
+                    <div class= "flex flex-row items-start gap-10 sm:text-md md:text-lg lg:text-xl">
+                        <p class="items-center bg-teal-300 dark:bg-cyan-800 sm:w-[90px] md:w-[150px] p-4 font-bold font-inconsolas rounded-2xl">JAN 2024 - APR 2024</p>
+
+                        <div class= "flex flex-col sm:w-[160px] md:w-[350px] lg:text-justify font-inconsolas">
+                            <p>Teaching Assistant for Circuits and Electronics Module,</p>
+                            <p>SUTD</p>
+                        </div>
+                    </div>
+
+                    <div class= "flex flex-row items-start gap-10 sm:text-md md:text-lg lg:text-xl">
+                        <p class="items-center bg-teal-300 dark:bg-cyan-800 sm:w-[90px] md:w-[150px] p-4 font-bold font-inconsolas rounded-2xl">AUG 2023 - DEC 2023</p>
+
+                        <div class= "flex flex-col sm:w-[160px] md:w-[350px] lg:text-justify font-inconsolas">
+                            <p>Research and Development Intern,</p>
+                            <p>Racer Technology</p>
+                        </div>
+                    </div>
+                    
+                </div>
+
+            </div>
+
+            <div class="flex flex-col items-center mt-28 dark:text-slate-300 text-black">
+                <h2 class="mb-8 text-teal-700 dark:text-teal-400 font-offside sm:text-2xl md:text-3xl font-extrabold">ACHIEVEMENTS</h2>
+
+                <div class="mb-8 bg-white dark:bg-cyan-950/60 dark:shadow-teal-950 sm:px-5 md:px-10 lg:px-20 py-10 rounded-3xl backdrop-blur-sm sm:text-md md:text-lg lg:text-xl shadow-inner sm:text-start lg:text-justify font-inconsolas space-y-5">
+                    <p class="">
+                        SUTD Wurth Electronics Power Electronics Project Award 30.107 First Runner-Up (2024) 
+                    </p>
+                    <p class="">
+                        SUTD Honours List for Sophomore and Junior Years (2023) 
+                    </p>
+                    <p class="">
+                        SUTD DYSON 30.007 Most Innovative Concept (2023)  
+                    </p>
+                    <p class="">
+                        Best Student Award for Freshmore Subject: Global Humanities (2022)  
+                    </p>
+                    <p class="">
+                        Global Merit Scholarship (2021 - Present)  
+                    </p>
+                    <p class="">
+                        MOE Art Elective Scholarship (2019)  
+                    </p>
+
+                </div> 
+            </div> 
+
+            <div class="flex flex-col justify-center items-center mt-8">
+
+                <h2 class="mb-8 text-teal-700 dark:text-teal-400 font-offside sm:text-2xl lg:text-3xl font-extrabold">SKILLS </h2>
+
+
+                <div class="flex flex-col lg:flex-row justify-between sm:space-y-10 lg:space-y-0 lg:space-x-20 items-center sm:mb-10 lg:mb-20">
+
+                    <div class="card">
+                        <div class="cursor-pointer card__content font-inconsolas h-[310px] w-[310px] box-border relative p-20 transition-transform duration-1000 ease-out">
+
+                            <div class="card__front shadow-md absolute shadow-gray-500 inset-0 p-8 gap-5 rounded-2xl text-teal-900 bg-teal-300 dark:bg-cyan-700 dark:shadow-gray-900 dark:text-teal-300 flex flex-col items-center justify-center">
+                                <h3 class="text-center text-2xl font-bold">Electrical & Electronics</h3>
+                                
+                                <i class="fa fa-bolt text-5xl" aria-hidden="true"></i>
+
+                            </div>
+
+                            <div class="card__back shadow-md shadow-gray-500 absolute inset-0 rounded-lg p-8 bg-lime-200 dark:shadow-gray-900 dark:bg-slate-800 dark:text-slate-300 flex items-center justify-start">
+                                <div class="text-md flex flex-col space-y-0.5">
+                                    <p>Soldering and Debugging</p>
+                                    <p>PCB Design (Altium, EasyEDA)</p>
+                                    <p>Analog IC Design (Cadence Virtuoso and ADE L)</p>
+                                    <p>Simulation (Multisim, LTSPICE)</p>
+                                    <p>Microcontrollers (Arduino, ESP-32)</p> 
+                                    <p>Basic Matlab (Controller Design)</p>
+                                    <p>Digilent WaveForms (Digital Discovery)</p>              
+                                </div>
+                            </div>
+
+                        </div>
+                        
+                    </div>
+
+                    <div class="card">
+                        <div class="cursor-pointer card__content font-inconsolas h-[310px] w-[310px] box-border relative p-20 transition-transform duration-1000 ease-out">
+
+                            <div class="card__front shadow-md absolute shadow-gray-500 inset-0 p-8 gap-5 rounded-2xl text-teal-900 bg-teal-300 dark:bg-cyan-700 dark:shadow-gray-900 dark:text-teal-300 flex flex-col items-center justify-center">
+                                <h3 class="text-center text-2xl font-bold">Software</h3>
+                                
+                                <i class="fa fa-laptop text-5xl" aria-hidden="true"></i>
+
+                            </div>
+
+                            <div class="card__back shadow-md shadow-gray-500 absolute inset-0 rounded-lg p-8 dark:shadow-gray-900 dark:bg-slate-800 dark:text-slate-300 bg-lime-200 flex items-start justify-start">
+                                <div class="text-md flex flex-col space-y-0.5">
+                                    <p>Python (Calculations and Data Manipulation)</p>
+                                    <p>C++ (Arduino IDE)</p>
+                                    <p>C# (Instrument Automation)</p>
+                                    <p>Socket Programming (TCP)</p>
+                                    <p>HTML,CSS,Javascript (Basic Web Dev)</p>
+                         
+                                </div>
+                            </div>
+
+                        </div>
+                        
+                    </div>
+
+                    <div class="card">
+                        <div class="cursor-pointer card__content font-inconsolas h-[310px] w-[310px] box-border relative p-20 transition-transform duration-1000 ease-out">
+
+                            <div class="card__front shadow-md absolute shadow-gray-500 inset-0 p-8 gap-5 rounded-2xl dark:bg-cyan-700 dark:shadow-gray-900 dark:text-teal-300  text-teal-900 bg-teal-300 flex flex-col items-center justify-center">
+                                <h3 class="text-center text-2xl font-bold">Mechanical</h3>
+                                
+                                <i class="fa fa fa-wrench text-5xl" aria-hidden="true"></i>
+
+                            </div>
+
+                            <div class="card__back shadow-md shadow-gray-500 absolute inset-0 rounded-lg p-8 dark:shadow-gray-900 dark:bg-slate-800 dark:text-slate-300 bg-lime-200 flex items-start justify-start">
+                                <div class="text-md flex flex-col space-y-0.5">
+                                    <p>Computer-Aided Design (Solidworks, Fusion360, Siemens NX)</p>
+                                    <p>Simulation (Solidworks FEA, Solidworks Flow Simulation)</p>
+                                    <p>3D Printing (FDM) </p>
+                         
+                                </div>
+                            </div>
+
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+                <div class="flex flex-col lg:flex-row justify-between sm:space-y-10 lg:space-y-0 sm:space-x-0 lg:space-x-20 items-center">
+
+                    <div class="card">
+                        <div class="cursor-pointer card__content font-inconsolas h-[310px] w-[310px] box-border relative p-20 transition-transform duration-1000 ease-out">
+
+                            <div class="card__front shadow-md absolute shadow-gray-500 inset-0 p-8 gap-5 rounded-2xl dark:bg-cyan-700 dark:shadow-gray-900 dark:text-teal-300  text-teal-900 bg-teal-300 flex flex-col items-center justify-center">
+                                <h3 class="text-center text-2xl font-bold">Design</h3>
+                                
+                                <i class="fa fa-paint-brush text-5xl" aria-hidden="true"></i>
+
+                            </div>
+
+                            <div class="card__back shadow-md shadow-gray-500 absolute inset-0 rounded-lg p-8 dark:shadow-gray-900 dark:bg-slate-800 dark:text-slate-300 bg-lime-200 flex items-start justify-start">
+                                <div class="text-md flex flex-col space-y-0.5">
+                                    <p>Figma</p>
+                                    <p>Adobe (Illustrator,Photoshop, Lightroom)</p>
+                                    <p>Procreate</p>
+                                    <p>Blender (Modelling and Basic Animation)</p>           
+                                </div>
+                            </div>
+
+                        </div>
+                        
+                    </div>
+
+                    <div class="card">
+                        <div class="cursor-pointer card__content font-inconsolas h-[310px] w-[310px] box-border relative p-20 transition-transform duration-1000 ease-out">
+
+                            <div class="card__front shadow-md absolute shadow-gray-500 inset-0 p-8 gap-5 rounded-2xl dark:bg-cyan-700 dark:shadow-gray-900 dark:text-teal-300  text-teal-900 bg-teal-300 flex flex-col items-center justify-center">
+                                <h3 class="text-center text-2xl font-bold">Softskills</h3>
+                                
+                                <i class="fa fa fa-users text-5xl" aria-hidden="true"></i>
+
+                            </div>
+
+                            <div class="card__back shadow-md shadow-gray-500 absolute inset-0 rounded-lg p-8 dark:shadow-gray-900 dark:bg-slate-800 dark:text-slate-300 bg-lime-200 flex items-start justify-start">
+                                <div class="text-md flex flex-col space-y-0.5">
+                                    <p>Creativity</p>
+                                    <p>Design Thinking</p>
+                                    <p>Detail-Oriented</p>
+                                    <p>Problem Solving</p>
+                                    <p>Learning Agility</p>
+                                    <p>Mentoring</p>
+                                    <p>Resilience</p>
+                                    <p>Collaboration</p>
+                         
+                                </div>
+                            </div>
+
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>   
+    </section>
+    
+    <!-- Projects -->
+    
+    <section id="projects" class="w-full py-20 border-sky-700 dark:border-sky-400 border-t-2 bg-sky-200/10">
+        <div class="relative flex flex-col max-w-6xl sm:ml-10 sm:mr-10 lg:mx-auto mt-8 justify-center items-center gap-20">
+
+            
+            <h1 class="mb-8 sm:text-4xl lg:text-5xl dark:text-sky-400 text-sky-700 font-offside text-5xl font-extrabold">SELECTED PROJECTS</h1>
+
+            
+            <div class="max-w-[950px] w-full sm:h-[300px] md:h-[400px] lg:h-[500px] rounded-2xl relative shadow-xl shadow-gray-500 dark:shadow-lg dark:shadow-gray-900  overflow-hidden group">
+
+                <div class="w-full h-full">
+                    <img src="./Images/VCO1.png" alt="VCO_schematics" class="w-full h-full object-cover">
+                </div>
+                
+                <div class="absolute h-[100px] bottom-0 p-3 md:p-10 w-full backdrop-blur-sm flex flex-row items-center justify-between bg-sky-200/60 dark:bg-blue-900/80 dark:group-hover:bg-blue-600/80 group-hover:bg-sky-300/80 space-x-2">
+                    <p class="font-semibold sm:text-sm md:text-lg lg:text-xl font-inconsolas text-white">3-Stage Current Starved Voltage-Controlled Oscillator</p>
+                    <a href="projects.html#P1" class="font-semibold text-cyan-800 sm:text-sm md:text-lg font-offside p-2 bg-cyan-200 dark:bg-cyan-200/60  dark:hover:bg-cyan-100/60 dark:hover:scale-105 rounded-lg hover:bg-cyan-100 hover:scale-105  w-[80px] md:w-[150px] lg:w-[200px] text-center cursor-pointer">FIND OUT MORE</a>
+                </div>
+
+            </div>
+
+            <div class="max-w-[950px] w-full sm:h-[300px] md:h-[400px] lg:h-[500px] rounded-2xl relative shadow-xl shadow-gray-500 dark:shadow-lg dark:shadow-gray-900  overflow-hidden group">
+
+                <div class="w-full h-full">
+                    <img src="./Images/Boost_1.jpg" alt="VCO_schematics" class="w-full h-full object-cover">
+                </div>
+                
+                <div class="absolute h-[100px] bottom-0 p-3 md:p-10 w-full backdrop-blur-sm flex flex-row items-center justify-between bg-sky-200/60 dark:bg-blue-900/80 dark:group-hover:bg-blue-600/80 group-hover:bg-sky-300/80 space-x-2">
+                    <p class="font-semibold sm:text-sm md:text-lg lg:text-xl font-inconsolas text-white">DC-to-DC Boost Converter</p>
+                    <a href="projects.html#P2" class="font-semibold text-cyan-800 sm:text-sm md:text-lg font-offside p-2 bg-cyan-200 dark:bg-cyan-200/60  dark:hover:bg-cyan-100/60 dark:hover:scale-105 rounded-lg hover:bg-cyan-100 hover:scale-105  w-[80px] md:w-[150px] lg:w-[200px] text-center cursor-pointer">FIND OUT MORE</a>
+                </div>
+
+            </div>
+
+            <div class="max-w-[950px] w-full sm:h-[300px] md:h-[400px] lg:h-[500px] rounded-2xl relative shadow-xl shadow-gray-500 dark:shadow-lg dark:shadow-gray-900  overflow-hidden group">
+
+                <div class="w-full h-full">
+                    <img src="./Images/Scale_1.jpg" alt="Scale_Up" class="w-full h-full object-cover">
+                </div>
+                
+                <div class="absolute h-[100px] bottom-0 p-3 md:p-10 w-full backdrop-blur-sm flex flex-row items-center justify-between bg-sky-200/60 dark:bg-blue-900/80 dark:group-hover:bg-blue-600/80 group-hover:bg-sky-300/80 space-x-2">
+                    <p class="font-semibold sm:text-sm md:text-lg lg:text-xl font-inconsolas text-white">Project Scale Up</p>
+                    <a href="projects.html#P3" class="font-semibold text-cyan-800 sm:text-sm md:text-lg font-offside p-2 bg-cyan-200 dark:bg-cyan-200/60  dark:hover:bg-cyan-100/60 dark:hover:scale-105 rounded-lg hover:bg-cyan-100 hover:scale-105  w-[80px] md:w-[150px] lg:w-[200px] text-center cursor-pointer">FIND OUT MORE</a>
+                </div>
+
+            </div>
+
+            <div class="max-w-[950px] w-full sm:h-[300px] md:h-[400px] lg:h-[500px] rounded-2xl relative shadow-xl shadow-gray-500 dark:shadow-lg dark:shadow-gray-900   overflow-hidden group">
+
+                <div class="w-full h-full">
+                    <img src="./Images/Heatable_1.jpg" alt="HeaTable" class="w-full h-full object-cover">
+                </div>
+                
+                <div class="absolute h-[100px] bottom-0 p-3 md:p-10 w-full backdrop-blur-sm flex flex-row items-center justify-between bg-sky-200/60 dark:bg-blue-900/80 dark:group-hover:bg-blue-600/80 group-hover:bg-sky-300/80 space-x-2">
+                    <p class="font-semibold sm:text-sm md:text-lg lg:text-xl font-inconsolas text-white">30.007 Project HeaTable</p>
+                    <a href="projects.html#P4" class="font-semibold text-cyan-800 sm:text-sm md:text-lg font-offside p-2 bg-cyan-200  dark:hover:bg-cyan-100/60 dark:hover:scale-105 dark:bg-cyan-200/60 rounded-lg hover:bg-cyan-100 hover:scale-105  w-[80px] md:w-[150px] lg:w-[200px] text-center cursor-pointer">FIND OUT MORE</a>
+                </div>
+
+            </div>
+
+
+            <div class="max-w-[950px] w-full sm:h-[300px] md:h-[400px] lg:h-[500px] rounded-2xl relative shadow-xl shadow-gray-500 dark:shadow-lg dark:shadow-gray-900   overflow-hidden group">
+
+                <div class="w-full h-full">
+                    <img src="./Images/Dragon_1.jpg" alt="Cny_dragon" class="w-full h-full object-cover">
+                </div>
+                
+                <div class="absolute h-[100px] bottom-0 p-3 md:p-10 w-full backdrop-blur-sm flex flex-row items-center justify-between bg-sky-200/60 dark:bg-blue-900/80 dark:group-hover:bg-blue-600/80 group-hover:bg-sky-300/80 space-x-2">
+                    <p class="font-semibold sm:text-sm md:text-lg lg:text-xl font-inconsolas text-white">2024 Chinese New Year Light-Up</p>
+                    <a href="projects.html#P5" class="font-semibold text-cyan-800 sm:text-sm md:text-lg font-offside p-2 bg-cyan-200 dark:hover:bg-cyan-100/60 dark:hover:scale-105 hover:scale-105  dark:bg-cyan-200/60 rounded-lg hover:bg-cyan-100 hover:scale-105w-[80px] md:w-[150px] lg:w-[200px] text-center cursor-pointer">FIND OUT MORE</a>
+                </div>
+
+            </div>
+                
+
+        </div>
+
+    </section>
+
+    <footer class="rounded-t-lg bg-gradient-to-b dark:from-slate-900 dark:to-slate-800 from-cyan-200 to-teal-100 sm:p-10 lg:p-20 flex flex-col backdrop-blur-sm items-center justify-center space-y-8">
+        <p class="font-caveat text-3xl font-semibold text-black dark:text-teal-200/80">Let's Connect!</p>
+        
+        <div class="flex flex-row gap-x-10 items-center justify-center sm:text-2xl lg:text-3xl text-black dark:text-teal-200/80">
+            <a href="mailto:beirugan05@gmail.com" class="">
+                <i class="fa fa-envelope hover:animate-pulse" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/gan-bei-ru-021661256" class="">
+                <i class="fa fa-linkedin-square hover:animate-pulse" aria-hidden="true"></i>
+            </a>
+        </div>
+
+        <p class="sm:text-sm lg:text-md italic bottom-5 font-montserrat font-semibold text-gray-800 dark:text-teal-100/80 text-center">
+         Designed and created by Bei Ru. Last Updated in Jan 2025. 
+        </p>
+
+    </footer>
+
+    <script src="./app.js"> </script>
+    <script src="./dark.js"> </script>
+    <script src="./typing.js"> </script>
+    <script src="./matrix.js"></script>
+    <script src="./modal.js"> </script>
+
+</body>
+</html>

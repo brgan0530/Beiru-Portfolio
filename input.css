@@ -1,0 +1,260 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes wave {
+    0% { transform: rotate(0deg); }
+    10% { transform: rotate(20deg); }
+    20% { transform: rotate(-10deg); }
+    30% { transform: rotate(20deg); }
+    40% { transform: rotate(-10deg); }
+    50% { transform: rotate(20deg); }
+    60% { transform: rotate(0deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* Matrix */
+.dot-grid-component {
+    position: relative;
+    margin-top: 8%;
+    background: rgb(255, 255, 255);
+    padding:30px 45px;
+    
+    /*responsive*/
+    @media screen and (max-width: 768px) {
+        padding:20px 15px;
+      }
+
+    /*responsive*/
+    @media screen and (max-width: 380px) {
+        padding: 12px 1px 1px 1px;
+      }
+
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    
+}
+
+.top-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    /*responsive*/
+    @media screen and (max-width: 768px) {
+        margin-top: 20px;
+        margin-bottom: 5px;
+      }
+}
+
+.color-palette {
+    display: flex;
+    gap: 12px;
+    padding: 10px;
+    border-radius: 4px;
+    margin: right 10px;
+}
+
+.buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.btn {
+    padding: 8px 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #ffffff;
+    color: rgb(44, 44, 44);
+    transition: all 0.2s;
+    
+}
+
+.btn:hover {
+    background-color: #e3e3e3a9;
+    transform: translateY(-1px);
+}
+
+.color-option {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: transform 0.2s;
+    box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.4);
+}
+
+.color-option:hover {
+    transform: scale(1.1);
+}
+
+.color-option.selected {
+    outline: 3px solid rgb(229, 229, 229); /* initialise as this color */
+    outline-offset: 2px;
+}
+
+.grid-container {
+    background-color: #131515;
+    padding:20px 18px 20px 20px;
+    border-radius:8px;
+}
+
+.dot-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 15px;
+
+    /*responsive*/
+    @media screen and (max-width: 380px) {
+        gap: 12px;
+      }
+
+}
+
+.dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #2a2a2a;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    
+    /*responsive*/
+    @media screen and (max-width: 380px) {
+        width: 15px;
+        height: 15px;
+      }
+
+}
+
+.dot:hover {
+    opacity: 0.8;
+}
+
+/* tooltip */
+.tooltip {
+    position: absolute;
+    display: inline-block;
+    color: rgb(73, 73, 73);
+    right: 27px;
+    top: 20px;
+    
+    @media screen and (max-width: 380px) {
+        right: 35px;
+      }
+
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 130px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 10px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    left: 20%;
+    margin-left: -60px;
+
+    @media screen and (max-width: 640px) {
+        width: 100px;
+        left: 100%;
+      }
+    
+  }
+  
+  .tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.6) transparent transparent transparent;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+  
+  /* infinite marquee */
+  @keyframes scroll {
+    0% {
+      transform: translateX(120%);
+    }
+    30% {
+      transform: translateX(-120%);
+    }
+    60% {
+      transform: translateX(-120%);
+      }
+    100% {
+      transform: translateX(120%);
+    }
+  }
+
+  .marquee-container {
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 -120% 0 -120% ;
+  }
+
+  .marquee-content {
+    display: inline-block;
+    animation: scroll 50s linear infinite;
+  }
+
+  .marquee-content span {
+    padding-right: 1rem;
+  }
+
+
+/* flip card */
+.card { perspective: 800px;}
+.card__content {transform-style: preserve-3d;}
+.card:hover .card__content {transform: rotateX(.5turn);}
+
+.card__front,
+.card__back { backface-visibility: hidden;}
+.card__back{ transform: rotateX(.5turn);}
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
+
+  /*responsive*/
+  @media screen and (max-width: 768px) {
+    width: 5px;
+  }
+
+
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #008b72;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #006754;
+}
+
+/* Dropdown menu */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
