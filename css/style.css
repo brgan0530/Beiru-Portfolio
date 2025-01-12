@@ -768,6 +768,16 @@ video {
   margin-right: auto;
 }
 
+.mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.mx-10 {
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
+}
+
 .mb-1 {
   margin-bottom: 0.25rem;
 }
@@ -858,6 +868,10 @@ video {
 
 .mt-\[80px\] {
   margin-top: 80px;
+}
+
+.ml-2 {
+  margin-left: 0.5rem;
 }
 
 .box-border {
