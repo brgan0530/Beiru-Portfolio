@@ -32,7 +32,9 @@
     
     <title>Beirugan Portfolio</title>
 </head>
-<body class="overflow-x-hidden w-full min-w-full selection:bg-teal-300/40 selection:text-teal-900">
+<body class="overflow-x-hidden w-full selection:bg-teal-300/40 selection:text-teal-900">
+    <div class="relative max-w-[100vw] overflow-x-hidden"> <!-- Attempt to resolve overflow bug -->
+
     <!-- Grid Background -->
     <div
         class="fixed h-full w-full bg-white dark:bg-blue-950 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] -z-20"
@@ -658,6 +660,8 @@
     <script src="./typing.js"> </script>
     <script src="./matrix.js"></script>
     <script src="./modal.js"> </script>
+
+    </div>
 
 </body>
 </html>
